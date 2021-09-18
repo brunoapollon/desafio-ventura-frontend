@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from '../../components/Header';
 import FeturedVideo from '../../components/FeturedVideo';
+import SectionVideos from '../../components/SectionVideos';
 
 import ImageTest from '../../assets/imageTest.png';
 
@@ -21,6 +22,7 @@ function Training() {
             />
           )}
         </div>
+        <SectionVideos />
       </Content>
     </Container>
   );

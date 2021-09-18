@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 650px;
-  height: 100%;
+  height: 580px;
+  margin-top: 32px;
   .thumb {
     width: 100%;
     height: 430px;
@@ -23,12 +24,13 @@ export const Container = styled.div`
         stroke: #fff;
       }
     }
-    > h1 {
-      font-size: 24px;
-    }
-    > p {
-      font-size: 16px;
-      color: #222;
-    }
+  }
+  > h1 {
+    font-size: 24px;
+    margin: 32px 0 16px 0;
+  }
+  > p {
+    font-size: 16px;
+    color: #222;
   }
 `;
