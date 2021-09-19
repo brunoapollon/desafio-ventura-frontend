@@ -7,7 +7,8 @@ export const Container = styled.div`
   .thumb {
     width: 100%;
     height: 430px;
-    background: url(${props => props.image}) no-repeat center;
+    background: url(${props => (props.video ? props.video.urlThumbnail : '')})
+      no-repeat center;
     display: flex;
     justify-content: center;
     align-items: center;

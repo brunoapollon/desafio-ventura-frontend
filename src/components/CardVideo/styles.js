@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.button`
   width: 100%;
-  height: 56px;
+  height: max-content;
   display: flex;
+  background: transparent;
+  border: none;
+  padding: 5px;
+  box-sizing: border-box;
   > img {
     height: 56px;
     width: 82px;
@@ -28,9 +32,14 @@ export const Container = styled.div`
     > p {
       font-size: 10px;
       color: #222;
+      text-align: left;
+      overflow: hidden;
     }
   }
-  & + div {
+  & + button {
     margin-top: 24px;
+  }
+  &:hover {
+    box-shadow: 0 0 5px #222;
   }
 `;

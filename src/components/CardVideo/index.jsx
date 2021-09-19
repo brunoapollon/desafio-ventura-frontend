@@ -5,7 +5,7 @@ import { Container } from './styles';
 function CardVideo(props) {
   const { title, desc, imageCard, duration } = props;
   return (
-    <Container>
+    <Container {...props}>
       <img src={imageCard} alt="thumb" />
       <div>
         <div>

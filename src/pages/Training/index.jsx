@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 import Header from '../../components/Header';
 import FeturedVideo from '../../components/FeturedVideo';
 import SectionVideos from '../../components/SectionVideos';
+import CardVideo from '../../components/CardVideo';
 
 import { Container, Content } from './styles';
 
@@ -10,14 +11,20 @@ import api from '../../services/api';
 
 function Training() {
   const [response, setResponse] = useState([]);
+  const [videoPlay, setVideoPlay] = useState(null);
 
   useEffect(() => {
     (async function requestApi() {
       await api.get('video/').then(promise => {
         setResponse(promise.data);
+        setVideoPlay(promise.data[0]);
       });
     })();
   }, []);
+
+  const handleChangeVideo = useCallback(video => {
+    setVideoPlay(video);
+  });
 
   return (
     <Container>
@@ -25,16 +32,25 @@ function Training() {
       <Content>
         <div>
           {response.length !== 0 && (
-            <FeturedVideo
-              image={response[0].urlThumbnail}
-              desc={response[0].description}
-              title={response[0].title}
-              playVideo={false}
-              url={response[0].url}
-            />
+            <FeturedVideo video={videoPlay} start={false} />
           )}
         </div>
-        <SectionVideos data={response} />
+        <SectionVideos>
+          {response &&
+            response.length !== 0 &&
+            response.map(video => (
+              <CardVideo
+                key={video.id}
+                title={video.title}
+                desc={video.description}
+                imageCard={video.urlThumbnail}
+                duration="5:00"
+                onClick={() => {
+                  handleChangeVideo(video);
+                }}
+              />
+            ))}
+        </SectionVideos>
       </Content>
     </Container>
   );
