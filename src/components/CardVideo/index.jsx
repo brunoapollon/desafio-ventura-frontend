@@ -2,6 +2,10 @@ import React from 'react';
 
 import { Container } from './styles';
 
+/**
+ * component de card que é uma previa do video que sera exibido ao ser clicado
+ */
+
 function CardVideo(props) {
   const { title, desc, imageCard, duration } = props;
   return (

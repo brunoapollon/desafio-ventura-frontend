@@ -5,6 +5,13 @@ import VideoComponent from '../VideoComponent';
 
 import { Container } from './styles';
 
+/**
+ * component que mostra o video selecionado
+ * caso o botão de play seja clicado o estado é atualizado e o component muda
+ * ao inves de mostrar a thumbnail com o botão de play, ele renderiza o component de video
+ * mando a url
+ */
+
 function feturedVideo(props) {
   const { video, start } = props;
   const [handlePlay, setHandlePlay] = useState(start);

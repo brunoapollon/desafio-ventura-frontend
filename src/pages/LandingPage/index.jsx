@@ -4,6 +4,11 @@ import { Container, Content } from './styles';
 
 import landingImage from '../../assets/landingImage.png';
 
+/**
+ * página principal que redireciona ao clicar no link para a tela que lista
+ * os videos
+ */
+
 function LandingPage() {
   return (
     <Container>

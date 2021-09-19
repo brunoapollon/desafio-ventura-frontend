@@ -4,6 +4,10 @@ import { Route, Switch } from 'react-router-dom';
 import LandingPage from '../pages/LandingPage';
 import Training from '../pages/Training';
 
+/**
+ * component de rotas organizador em uma pasta para a exportação
+ */
+
 function Routes() {
   return (
     <Switch>

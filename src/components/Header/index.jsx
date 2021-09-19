@@ -3,6 +3,10 @@ import { IoIosLogOut } from 'react-icons/io';
 
 import { Container, Content } from './styles';
 
+/**
+ * component header da tela de videos
+ */
+
 function Header() {
   return (
     <Container>

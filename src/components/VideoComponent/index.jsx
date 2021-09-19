@@ -2,6 +2,10 @@ import React from 'react';
 
 import { Container } from './styles';
 
+/**
+ * component video querecebe a url do video a ser reproduzidos
+ */
+
 function Video({ url }) {
   return (
     <Container>

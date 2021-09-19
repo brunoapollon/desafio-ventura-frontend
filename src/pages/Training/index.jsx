@@ -9,6 +9,16 @@ import { Container, Content } from './styles';
 
 import api from '../../services/api';
 
+/**
+ * página  de training que lista e reproduz os videos
+ * foi feita uma componentização de diversos elementos separando a lógica deles
+ * assim como códigos e estilização
+ * nessa página  fica a requisição principal dentro de um useEffect para
+ * evitar diversas execuções  e foi aplixado useStats tanto para dados quanto para
+ * o controle do que é reproduzido na tela.
+ * o useCallback foi utilizado para evitar diversas criações da mesma função
+ */
+
 function Training() {
   const [response, setResponse] = useState([]);
   const [videoPlay, setVideoPlay] = useState(null);
