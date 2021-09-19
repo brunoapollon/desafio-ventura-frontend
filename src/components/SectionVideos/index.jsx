@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 import { Container } from './styles';
 
@@ -7,7 +8,11 @@ import { Container } from './styles';
  */
 
 function SectionVideos({ children }) {
-  return <Container>{children}</Container>;
+  return (
+    <Container>
+      <ScrollContainer className="scroll-container">{children}</ScrollContainer>
+    </Container>
+  );
 }
 
 export default SectionVideos;
