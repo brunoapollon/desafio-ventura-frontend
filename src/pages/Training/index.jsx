@@ -44,7 +44,7 @@ function Training() {
                 title={video.title}
                 desc={video.description}
                 imageCard={video.urlThumbnail}
-                duration="5:00"
+                duration={video.duration}
                 onClick={() => {
                   handleChangeVideo(video);
                 }}

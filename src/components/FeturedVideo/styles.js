@@ -17,7 +17,7 @@ export const Container = styled.div`
       height: 70px;
       border-radius: 50%;
       border: none;
-      background: #2d46b9;
+      background: #006bff;
       display: flex;
       justify-content: center;
       align-items: center;
