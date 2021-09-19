@@ -1,28 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Header from '../../components/Header';
 import FeturedVideo from '../../components/FeturedVideo';
 import SectionVideos from '../../components/SectionVideos';
 
-import ImageTest from '../../assets/imageTest.png';
-
 import { Container, Content } from './styles';
 
+import api from '../../services/api';
+
 function Training() {
+  const [response, setResponse] = useState([]);
+
+  useEffect(() => {
+    (async function requestApi() {
+      await api.get('video/').then(promise => {
+        setResponse(promise.data);
+      });
+    })();
+  }, []);
+
   return (
     <Container>
       <Header />
       <Content>
         <div>
-          {ImageTest && (
+          {response.length !== 0 && (
             <FeturedVideo
-              image={ImageTest}
-              desc="Nam finibus nibh eget elit pulvinar, mattis sagittis enim finibus. Pellentesque ultricies augue id magna semper dignissim. Fusce at augue blandit, vulputate nisl nec, aliquam metus. Ut lacinia accumsan diam."
-              title="Introdução"
+              image={response[0].urlThumbnail}
+              desc={response[0].description}
+              title={response[0].title}
+              playVideo={false}
+              url={response[0].url}
             />
           )}
         </div>
-        <SectionVideos />
+        <SectionVideos data={response} />
       </Content>
     </Container>
   );

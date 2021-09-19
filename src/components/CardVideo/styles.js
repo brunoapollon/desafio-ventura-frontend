@@ -11,6 +11,7 @@ export const Container = styled.div`
   }
   > div {
     margin-left: 16px;
+    flex: 1;
     > div {
       display: flex;
       justify-content: space-between;

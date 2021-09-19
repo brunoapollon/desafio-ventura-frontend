@@ -17,6 +17,8 @@
     "arrow-parens": "off",
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "wrap-iife": "off",
+    "operator-linebreak": "off"
   }
 }

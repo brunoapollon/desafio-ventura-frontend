@@ -15,4 +15,7 @@ export default createGlobalStyle`
   h1,h2,h3,h4,h5, p, span, input, a, button{
     font-family: 'Ubuntu', sans-serif;
   }
+  button{
+    cursor: pointer;
+  }
 `;
